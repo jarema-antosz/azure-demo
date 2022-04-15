@@ -13,6 +13,13 @@ Accessing logs in Azure CLI:
 az webapp log config --name <app-name> --resource-group <resource-group-name> --docker-container-logging filesystem
 az webapp log tail --name <app-name> --resource-group <resource-group-name>
 
+Logs in browser:
+https://jarema-spring-boot-demo.scm.azurewebsites.net/api/logs/docker
+
+SSH in browser:
+https://jarema-spring-boot-demo.scm.azurewebsites.net/webssh/host
+
 
 Clean up:
 az group delete --name <resource-group-name> --yes
+
