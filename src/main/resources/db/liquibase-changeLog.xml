@@ -14,9 +14,4 @@
         <sql>INSERT INTO book(id, author, title, version) VALUES(nextval('book_sequence'), 'Vlad Mihalcea', 'High-Performance Java Persistence', 0);</sql>
     </changeSet>
 
-    <changeSet author="antoszj" id="0002">
-        <sql>CREATE TABLE account(iban character varying(26) NOT NULL, owner character varying(255) COLLATE pg_catalog."default", balance bigint,  CONSTRAINT account_pkey PRIMARY KEY (iban))</sql>
-        <sql>CREATE TABLE account_versioned(iban character varying(26) NOT NULL, owner character varying(255) COLLATE pg_catalog."default", balance bigint,  version integer NOT NULL, CONSTRAINT accountv_pkey PRIMARY KEY (iban))</sql>
-    </changeSet>
-<!-- version integer NOT NULL, -->
 </databaseChangeLog>
