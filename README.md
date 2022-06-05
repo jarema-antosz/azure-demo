@@ -23,3 +23,27 @@ https://jarema-spring-boot-demo.scm.azurewebsites.net/webssh/host
 Clean up:
 az group delete --name <resource-group-name> --yes
 
+
+############################################
+
+PostreSQL
+
+az postgres server create -l northeurope -g jaremaspringdemo -n jaremademodbserver -u username -p XXXXXX --sku-name B_Gen5_1
+az postgres server create -l northeurope -g jaremaspringdemo -n jaremademodbserver -u jaremadmin -p XXXXXX --sku-name B_Gen5_1
+
+az postgres server list-skus -l northeurope
+
+az postgres server firewall-rule create --end-ip-address
+                                        --name
+                                        --resource-group
+                                        --server-name
+                                        --start-ip-address
+
+az postgres db create -n demodb -g jaremaspringdemo -s jaremademodbserver
+
+#enable connection from my IP address                                        
+az postgres server firewall-rule create --end-ip-address 89.151.34.163 --name jaremademodbserver_firewall_rule --resource-group jaremaspringdemo --server-name jaremademodbserver --start-ip-address 89.151.34.163                                        
+                                        
+
+
+
