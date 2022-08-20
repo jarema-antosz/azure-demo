@@ -31,6 +31,11 @@
       <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.azure.spring</groupId>
+      <artifactId>spring-cloud-azure-starter-keyvault-secrets</artifactId>
+      <version>4.0.0</version>
+    </dependency>
+    <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <scope>runtime</scope>
@@ -61,6 +66,8 @@
           <resourceGroup>jaremaspringdemo</resourceGroup>
           <appName>jarema-spring-boot-demo</appName>
           <pricingTier>F1</pricingTier>
+          <!-- use S1 tier to enable vnet integration-->
+<!--          <pricingTier>S1</pricingTier>-->
           <region>northeurope</region>
           <runtime>
             <os>Linux</os>
@@ -84,5 +91,13 @@
         </configuration>
       </plugin>
     </plugins> 
-  </build> 
+  </build>
+
+  <repositories>
+    <repository>
+      <id>repo1</id>
+      <name>Central Repository</name>
+      <url>https://repo1.maven.org/maven2/</url>
+    </repository>
+  </repositories>
 </project>
